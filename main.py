@@ -6,6 +6,7 @@ app.config['SECRET_KEY'] = 'a303cd25b21ff329d8ec262b31d082c0'
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+
 	name = ""
 	if request.method == "POST":
 		name = " " + request.form['username']
@@ -28,6 +29,9 @@ def videos():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+	"""
+	GIT TEST
+	"""
 	form = RegistrationForm()
 	if form.validate_on_submit():
 		app.logger.info('validated')
